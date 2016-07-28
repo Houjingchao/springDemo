@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class MainController {
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    public String index(){
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index() {
         /*处理完请求后返回的界面*/
         /*定义了所需访问jsp的名字*/
         return "index";
