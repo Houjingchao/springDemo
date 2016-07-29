@@ -25,6 +25,17 @@
             <version>1.10.1.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.mchange</groupId>
@@ -43,7 +54,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.39</version>
         </dependency>
-
     </dependencies>
     <build>
         <finalName>springmvcdemo</finalName>
