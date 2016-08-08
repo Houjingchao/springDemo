@@ -25,8 +25,6 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        /*处理完请求后返回的界面*/
-        /*定义了所需访问jsp的名字*/
         return "index";
     }
 
@@ -42,9 +40,11 @@ public class MainController {
         return "admin/users";
     }
 
-    @RequestMapping(value = "/admain/users/add", method = RequestMethod.GET)
+    // get请求，访问添加用户 页面
+    @RequestMapping(value = "/admin/users/add", method = RequestMethod.GET)
     public String addUser() {
-        return "admain/addUser";
+        // 返回 admin/addUser.jsp页面
+        return "admin/addUser";
     }
 
     // post请求，处理添加用户请求，并重定向到用户管理页面
@@ -55,6 +55,8 @@ public class MainController {
 
         // 数据库中添加一个用户，该步暂时不会刷新缓存
         //userRepository.save(userEntity);
+        System.out.println(userEntity.getFirstName());
+        System.out.println(userEntity.getLastName());
 
         // 数据库中添加一个用户，并立即刷新缓存
         userRepository.saveAndFlush(userEntity);
@@ -110,5 +112,4 @@ public class MainController {
         userRepository.flush();
         return "redirect:/admin/users";
     }
-
 }

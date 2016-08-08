@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mouge</groupId>
-    <artifactId>springmvc-list</artifactId>
+    <groupId>com.gaussic</groupId>
+    <artifactId>springdemo-list</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>springmvc-list Maven Webapp</name>
+    <name>springdemo-list Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -54,9 +54,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.39</version>
         </dependency>
+
+
     </dependencies>
     <build>
-        <finalName>springmvcdemo</finalName>
+        <finalName>springmvc</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
