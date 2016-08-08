@@ -9,7 +9,7 @@ import java.util.Date;
  * Created by jaf on 16/8/8.
  */
 @Entity
-@Table(name = "blog", schema = "springdemo", catalog = "")
+@Table(name = "blog", schema = "springmvc", catalog = "")
 public class BlogEntity {
     private int id;
     private String title;
