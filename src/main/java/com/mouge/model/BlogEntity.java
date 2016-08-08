@@ -3,7 +3,7 @@ package com.mouge.model;
 import javax.persistence.*;
 
 /**
- * Created by jaf on 16/8/2.
+ * Created by jaf on 16/8/8.
  */
 @Entity
 @Table(name = "blog", schema = "springmvc", catalog = "")
@@ -12,7 +12,6 @@ public class BlogEntity {
     private String title;
     private String content;
     private UserEntity userByUserId;
-    private UserEntity userByUserId1;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -74,15 +73,5 @@ public class BlogEntity {
 
     public void setUserByUserId(UserEntity userByUserId) {
         this.userByUserId = userByUserId;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    public UserEntity getUserByUserId1() {
-        return userByUserId1;
-    }
-
-    public void setUserByUserId1(UserEntity userByUserId1) {
-        this.userByUserId1 = userByUserId1;
     }
 }
