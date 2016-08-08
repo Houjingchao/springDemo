@@ -1,6 +1,5 @@
 package com.mouge.controller;
 
-import com.mouge.model.UserEntity;
 import com.mouge.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,16 +1,21 @@
 package com.mouge.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by jaf on 16/8/8.
  */
 @Entity
-@Table(name = "blog", schema = "springmvc", catalog = "")
+@Table(name = "blog", schema = "springdemo", catalog = "")
 public class BlogEntity {
     private int id;
     private String title;
     private String content;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date pubDate;
     private UserEntity userByUserId;
 
     @Id
@@ -43,6 +48,16 @@ public class BlogEntity {
         this.content = content;
     }
 
+    @Basic
+    @Column(name = "pub_date", nullable = false)
+    public Date getPubDate() {
+        return pubDate;
+    }
+
+    public void setPubDate(Date pubDate) {
+        this.pubDate = pubDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,6 +68,7 @@ public class BlogEntity {
         if (id != that.id) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (content != null ? !content.equals(that.content) : that.content != null) return false;
+        if (pubDate != null ? !pubDate.equals(that.pubDate) : that.pubDate != null) return false;
 
         return true;
     }
@@ -62,6 +78,7 @@ public class BlogEntity {
         int result = id;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (content != null ? content.hashCode() : 0);
+        result = 31 * result + (pubDate != null ? pubDate.hashCode() : 0);
         return result;
     }
 
